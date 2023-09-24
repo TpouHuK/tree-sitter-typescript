@@ -9,6 +9,8 @@ fn main() {
         .flag_if_supported("-Wno-unused-parameter")
         .flag_if_supported("-Wno-unused-but-set-variable");
 
+    tree_sitter_wasm_build_tool::add_wasm_headers(&mut config).unwrap();
+
     for path in &[
         typescript_dir.join("parser.c"),
         typescript_dir.join("scanner.c"),
